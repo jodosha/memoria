@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; }
 body { font-family: Helvetica,Arial,sans-serif; color: #333; background-color: #ccc; font-size: 16px; line-height: 24px; }
 h1 { margin: 0; font-size: 60px; line-height: 100px; text-align: center; }
-h2 { margin: -30px 0 40px 50px; font-size: 20px; line-height: 20px; text-align: center; color: #999; }
+h2 { margin: 0; font-size: 20px; line-height: 20px; text-align: center; color: #999; }
 h3 { margin: 24px 0 6px 0; font-size: 18px; line-height: 18px; border-bottom: 1px solid #ccc; }
 h1 img { vertical-align: middle; }
 p { margin: 0 0 24px 0; }
@@ -20,3 +20,48 @@ a:hover { background-color: #06c; color: #fff; text-decoration: none; }
 #content { margin:0 auto; padding: 24px; width:700px; background-color:#fff; border: 1px solid #999; border-width: 0 1px 1px 1px; }
 #footer { margin:0 auto 24px; padding: 12px; width:700px; line-height: 24px; }
 .help { font-size: 14px; color: #888; }
+
+
+/* root element for accordion. decorated with rounded borders and gradient background image */
+#servers {
+	background:#333;
+	width: 100%;
+	border:1px solid #333;
+}
+
+/* accordion header */
+#servers h2 {
+	background:#ccc;
+	margin:0;
+	padding:5px 15px;
+	font-size:14px;
+	font-weight:normal;
+	border:1px solid #fff;
+	border-bottom:1px solid #ddd;
+	cursor:pointer;		
+}
+
+/* currently active header */
+#servers h2.current {
+	cursor:default;
+	background-color:#fff;
+}
+
+/* accordion pane */
+#servers div.pane {
+	border:1px solid #fff;
+	border-width:0 2px;
+	display:none;
+	height:200px;
+	padding:15px;
+	color:#fff;
+	font-size:12px;
+}
+
+/* a title inside pane */
+#servers div.pane h3 {
+	font-weight:normal;
+	margin:0 0 -5px 0;
+	font-size:16px;
+	color:#999;
+}

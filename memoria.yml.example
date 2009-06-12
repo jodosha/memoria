@@ -1,0 +1,17 @@
+:development:
+  :db: 'mysql://root@localhost/memoria'
+  :auth:
+    :username: 'admin'
+    :password: 'memoria'
+
+:test: 
+  :db: 'sqlite3::memory:'
+  :auth:
+    :username: 'admin'
+    :password: 'memoria'
+
+:production:
+  :db: 'sqlite3:///var/www/memoria/shared/memoria.db'
+  :auth:
+    :username: 'admin'
+    :password: 'memoria'
