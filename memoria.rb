@@ -3,6 +3,7 @@ require "sinatra"
 require "dm-core"
 require "dm-validations"
 require "enumerator"
+require "redis"
 
 $:.unshift "app"
 require "base"

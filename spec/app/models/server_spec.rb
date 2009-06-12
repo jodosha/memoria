@@ -17,7 +17,12 @@ describe "Server" do
       server.save.should be_false
     end
   end
-  
+
+  it "should return a status" do
+    server = Server.new attributes
+    server.should_not be_alive
+  end
+
   private
     def attributes(options = {})
       { :name => "master", :host => "127.0.0.1", :port => "6379" }.merge(options)
