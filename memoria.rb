@@ -1,5 +1,8 @@
 require "rubygems"
 require "sinatra"
+require "enumerator"
 
-get "/" do
-end
+$:.unshift "app"
+require "base"
+require "web"
+require "system"

@@ -1,0 +1,17 @@
+<h1>Redis servers</h1>
+<table border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <th>PID</th>
+    <th>%CPU</th>
+    <th>%MEM</th>
+    <th>Time</th>
+  </tr>
+  <% for stat in @stats %>
+    <tr>
+      <td><%= stat[:pid] %></td>
+      <td><%= stat[:cpu] %></td>
+      <td><%= stat[:memory] %></td>
+      <td><%= stat[:time] %></td>
+    </tr>
+  <% end %>
+</table>
