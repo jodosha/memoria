@@ -1,6 +1,6 @@
-require File.join(File.dirname(__FILE__) + "/env")
+require File.join(File.dirname(__FILE__), "..", "env")
 
-describe "Memoria" do
+describe "web" do
   describe "GET '/'" do
     it "should be successful" do
       get "/"
