@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; }
 body { font-family: Helvetica,Arial,sans-serif; color: #333; background-color: #ccc; font-size: 16px; line-height: 24px; }
-h1 { margin: 0; font-size: 60px; line-height: 100px; text-align: center; }
+h1 { margin: -20px; font-size: 60px; line-height: 100px; text-align: center; }
 h2 { margin: 0; font-size: 30px; line-height: 20px; }
 h3 { margin: 24px 0 6px 0; font-size: 18px; line-height: 18px; border-bottom: 1px solid #ccc; }
 h1 img { vertical-align: middle; }
@@ -24,7 +24,7 @@ input[type=text] { background-color:#fff; border:1px solid #bbb; margin:0.5em 0;
 input[type=text]:focus { border-color:#666; }
 #motto { text-align: center; margin-top: -30px; font-style: oblique; font-size: 16px; color: #666;}
 #content { margin:0 auto; padding: 24px; width:700px; background-color:#fff; border: 1px solid #999; border-width: 0 1px 1px 1px; }
-#footer { margin:0 auto 24px; padding: 12px; width:700px; line-height: 24px; }
+#footer { margin:0 auto 0; padding: 12px; width:700px; line-height: 24px; }
 .help { font-size: 14px; color: #888; }
 .oblique { font-size: 14px; font-style: oblique; color: #666; }
 .right { text-align: right; }
