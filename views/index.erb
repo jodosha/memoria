@@ -15,7 +15,7 @@
   </p>
   <h3>Memory</h3>
   <p>
-    <strong>usage:</strong> <%= @stats[:used_memory] %>
+    <strong>usage:</strong> <%= number_to_human_size @stats[:used_memory] %>
   </p>
   <h3>Commands</h3>
   <p>
