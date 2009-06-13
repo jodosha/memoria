@@ -16,6 +16,8 @@ class Server
   property :port, String
 
   validates_present :name, :host, :port
+  validates_format  :name, :with => /^[0-9a-z]*$/i
+  validates_format  :host, :with => /^[0-9a-z\.]*$/i
 
   class << self
     def overall_stats
