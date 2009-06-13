@@ -1,6 +1,6 @@
 h1. Memoria - Statistics for Redis
 
-*Memoria* is a "Sinatra":http://sinatrarb.com application for "Redis":http://code.google.com/p/redis/ statistics.
+*Memoria* is a "Sinatra":http://www.sinatrarb.com application for "Redis":http://code.google.com/p/redis/ statistics.
 
 !http://img.skitch.com/20090613-nqmj7guc6n8ptwt3bgsbuipuw7.jpg(Memoria)!
 
