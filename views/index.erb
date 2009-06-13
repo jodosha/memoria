@@ -3,7 +3,6 @@
   <% if @servers && @servers.any? %>
     <% for server in @servers %>
     <h2><%= server.name %> <%= server.host %>:<%= server.port %></h2>
-    <div class="pane">.....</div>
     <% end %>
   <% else %>
   <p>No servers there. <a href="/servers/new">Add first</a></p>
