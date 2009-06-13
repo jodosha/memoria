@@ -1,5 +1,5 @@
 get "/" do
-  @servers = Server.all
+  @stats = Server.overall_stats
   erb :index
 end
 

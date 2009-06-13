@@ -1,10 +1,28 @@
 <h1>Redis servers</h1>
+<h2>Overview</h2>
+<p class="oblique">for all the servers</p>
 <div id="servers">
-  <% if @servers && @servers.any? %>
-    <% for server in @servers %>
-    <h2><%= server.name %> <%= server.host %>:<%= server.port %></h2>
-    <% end %>
+  <% unless @stats[:servers_count].zero? %>
+  <h3>Servers</h3>
+  <p>
+    <strong>alive:</strong> <%= @stats[:servers_alive] %><br />
+    <strong>total:</strong> <%= @stats[:servers_count] %>
+  </p>
+  <h3>Connections</h3>
+  <p>
+    <strong>alive:</strong> <%= @stats[:current_connections] %><br />
+    <strong>total:</strong> <%= @stats[:total_connections] %>
+  </p>
+  <h3>Memory</h3>
+  <p>
+    <strong>usage:</strong> <%= @stats[:used_memory] %>
+  </p>
+  <h3>Commands</h3>
+  <p>
+    <strong>processed:</strong> <%= @stats[:total_commands_processed] %>
+  </p>
   <% else %>
-  <p>No servers there. <a href="/servers/new">Add first</a></p>
-  <% end %>  
+  <p>No servers there.</p>
+  <% end %>
 </div>
+<p class="right"><a href="/servers/new">Add a server</a></p>
