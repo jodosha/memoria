@@ -1,19 +1,34 @@
-<h1>Add a new server</h1>
+<h1>Memoria</h1>
+<p id="motto">Statistics for Redis</p>
+<h2>Add a new server</h2>
+
+<p><a href="/">&#x2190; back to the overview</a></p>
+
 <form action="/servers" method="post">
   <table border="0" cellspacing="5" cellpadding="5">
     <tr>
       <th><label for="name">Name</label></th>
-      <td><input type="text" name="server[name]" id="name"></td>
+      <td>
+        <input type="text" name="server[name]" id="name">
+        <span class="small oblique">(master, slave ..)</span>
+      </td>
     </tr>
     <tr>
       <th><label for="host">Host</label></th>
-      <td><input type="text" name="server[host]" id="host"></td>
+      <td>
+        <input type="text" name="server[host]" id="host">
+        <span class="small oblique">(localhost, 127.0.0.1, example.com ..)</span>
+      </td>
     </tr>
     <tr>
       <th><label for="port">Port</label></th>
-      <td><input type="text" name="server[port]" id="port"></td>
+      <td>
+        <input type="text" name="server[port]" id="port">
+        <span class="small oblique">(6379, 6380 ..)</span>
+      </td>
     </tr>
   </table>
-  
+
+  <hr />
   <button>Add server</button>
 </form>
