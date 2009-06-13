@@ -5,7 +5,6 @@ destination = ARGV[0] || "."
 raise "Unknown path #{destination}." unless File.directory?(destination)
 destination = File.join(destination, "memoria")
 
-File.mkdir destination
-File.cp_r File.expand_path(File.join(File.dirname(__FILE__), "..")), destination
-File.rm_rf File.join(destination, "bin")
-File.rm File.join(destination, "memoria.gemspec")
+FileUtils.cp_r File.expand_path(File.join(File.dirname(__FILE__), '..')), destination
+FileUtils.rm_rf File.join(destination, "bin")
+FileUtils.rm File.join(destination, "memoria.gemspec")
