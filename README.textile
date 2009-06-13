@@ -8,6 +8,8 @@ h2. Getting Started
 
   (sudo) gem install jodosha-memoria -s http://gems.github.com
   memoria /path/to/installation
+  cd /path/to/installation
+  cp memoria.yml.example memoria.yml
   rackup config.ru --port 9292 mongrel
 
 h2. Acknowledgements
