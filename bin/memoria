@@ -8,3 +8,4 @@ destination = File.join(destination, "memoria")
 File.mkdir destination
 File.cp_r File.expand_path(File.join(File.dirname(__FILE__), "..")), destination
 File.rm_rf File.join(destination, "bin")
+File.rm File.join(destination, "memoria.gemspec")
