@@ -7,8 +7,10 @@
 <div class="error" style="display:<%= @server ? 'block' : 'none' %>">
   <% if @server && @server.errors.any? %>
     <ul>
-    <% @server.errors.each do |e| %>
-    <li><%=h e %></li>
+    <% @server.errors.each do |errors| %>
+      <% errors.each do |e| %>
+        <li><%=h e %></li>
+      <% end %>
     <% end %>
     </ul>
   <% end %>
