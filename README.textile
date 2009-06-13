@@ -12,6 +12,10 @@ h2. Getting Started
   cp memoria.yml.example memoria.yml
   rackup config.ru --port 9292 mongrel
 
+h2. Dependencies
+
+  (sudo) gem install sinatra dm-core do_sqlite3 redis-rb rspec
+
 h2. Acknowledgements
 
 *Memoria* was inspired by "Ben Schwarz":http://germanforblack.com/ "Amnesia":http://github.com/benschwarz/amnesia
