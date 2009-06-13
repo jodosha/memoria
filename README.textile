@@ -1,0 +1,23 @@
+h1. Memoria - Statistics for Redis
+
+*Memoria* is a "Sinatra":http://sinatrarb.org application for "Redis":http://code.google.com/p/redis/ statistics.
+
+!http://img.skitch.com/20090613-nqmj7guc6n8ptwt3bgsbuipuw7.jpg(Memoria)!
+
+h2. Getting Started
+
+  (sudo) gem install jodosha-memoria -s http://gems.github.com
+  memoria /path/to/installation
+  rackup config.ru --port 9292 mongrel
+
+h2. Acknowledgements
+
+*Memoria* was inspired by "Ben Schwarz":http://germanforblack.com/ "Amnesia":http://github.com/benschwarz/amnesia
+
+h2. Repository
+
+  git clone git://github.com/jodosha/memoria.git
+
+h2. Copyright
+
+(c) 2009 Luca Guidi - "http://lucaguidi.com":http://lucaguidi.com, released under the MIT license
