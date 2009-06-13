@@ -4,15 +4,6 @@
 
 <p><a href="/">&#x2190; back to the overview</a></p>
 
-<div id="errors">
-  <% if @server.errors.any? %>
-  <ul>
-    <% @server.errors.each do |e| %>
-    <li><%=h e %></li>
-    <% end %>
-  </ul>
-  <% end %>
-</div>
 <form action="/servers" method="post">
   <table border="0" cellspacing="5" cellpadding="5">
     <tr>
