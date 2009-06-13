@@ -29,3 +29,5 @@ input[type=text]:focus { border-color:#666; }
 .oblique { font-size: 14px; font-style: oblique; color: #666; }
 .right { text-align: right; }
 .small { font-size: 12px; }
+.error, .success { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd; }
+.error { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
