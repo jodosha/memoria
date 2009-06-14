@@ -10,6 +10,8 @@ class Server
   
   include DataMapper::Resource
 
+  has n, :snapshots
+
   property :id,   Serial
   property :name, String, :key => true
   property :host, String
@@ -32,6 +34,19 @@ class Server
         end
         result
       end
+    end
+  end
+
+  def write_statistics
+    if alive?
+      self.snapshots.create :alive  => true,
+        :used_memory                => used_memory.to_i,
+        :total_connections_received => total_connections_received.to_i,
+        :total_commands_processed   => total_commands_processed.to_i,
+        :connected_clients          => connected_clients.to_i,
+        :created_at                 => Time.now
+    else
+      self.snapshots.create :alive => false, :created_at => Time.now
     end
   end
 

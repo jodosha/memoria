@@ -39,11 +39,23 @@ describe "Server" do
   end
 
   it "should return a status" do
-    server = Server.new attributes
-    server.should_not be_alive
+    server.should be_alive
+  end
+
+  it "should write statistics for active server" do
+    lambda { server.write_statistics }.should change { server.snapshots.size }.by(1)
+  end
+
+  it "should write statistics for dead server" do
+    server = Server.create attributes(:port => "6380")
+    lambda { server.write_statistics }.should change { server.snapshots.size }.by(1)
   end
 
   private
+    def server
+      @server ||= Server.first
+    end
+
     def attributes(options = {})
       { :name => "master", :host => "127.0.0.1", :port => "6379" }.merge(options)
     end
