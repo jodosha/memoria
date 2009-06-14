@@ -15,10 +15,11 @@ class Clock
       end
     end
 
-    def servers
-      @@mutex.synchronize do
-        @@servers ||= Server.all
+    private
+      def servers
+        @@mutex.synchronize do
+          @@servers ||= Server.all
+        end
       end
-    end
   end
 end
