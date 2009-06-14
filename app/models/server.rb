@@ -15,6 +15,7 @@ class Server
   property :host, String
   property :port, String
   has n, :snapshots
+  has 1, :latest_snapshot, :class_name => "Snapshot", :limit => 1, :order => [:created_at.desc]
 
   validates_present :name, :host, :port
   validates_format  :name, :with => /^[0-9a-z]*$/i
@@ -22,14 +23,16 @@ class Server
 
   class << self
     def overall_stats
+      # TODO eager loading for latest_snapshot
+      # TODO Enumerable#inject is slow, replace with a C style
       all.inject(BLANK_STATS.dup) do |result, server|
-        result[:servers_count]              += 1
-        if server.alive?
-          result[:servers_alive]            += 1
-          result[:used_memory]              += server.used_memory.to_i
-          result[:total_connections]        += server.total_connections_received.to_i
-          result[:current_connections]      += server.connected_clients.to_i
-          result[:total_commands_processed] += server.total_commands_processed.to_i
+        result[:servers_count]            += 1
+        if snapshot = server.latest_snapshot
+          result[:servers_alive]            += snapshot.alive ? 1 : 0
+          result[:used_memory]              += snapshot.used_memory
+          result[:total_connections]        += snapshot.total_connections_received
+          result[:current_connections]      += snapshot.connected_clients
+          result[:total_commands_processed] += snapshot.total_commands_processed
         end
         result
       end

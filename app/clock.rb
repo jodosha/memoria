@@ -2,11 +2,11 @@ class Clock
   @@mutex = Mutex.new
 
   class << self
-    def run(timeout = 30)
+    def run(interval = 30)
       # TODO find a proper way to execute in background without forking
       fork do
         EventMachine.run do
-          EventMachine::PeriodicTimer.new(timeout) do
+          EventMachine::PeriodicTimer.new(interval) do
             servers.each do |server|
               EventMachine.defer proc { server.write_statistics }
             end

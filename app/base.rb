@@ -1,8 +1,8 @@
 module Memoria
   class << self
-    def new(start_clock = true, clock_timeout = 30)
+    def new(start_clock = true, clock_interval = 30)
       data_mapper_setup
-      Clock.run(clock_timeout) if start_clock
+      Clock.run(clock_interval) if start_clock
       Sinatra::Application
     end
 
