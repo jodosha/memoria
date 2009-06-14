@@ -16,9 +16,9 @@ end
 
 namespace :db do
   task :connect do
-    Memoria.new
+    Memoria.data_mapper_setup
   end
-  
+
   desc "Auto migrate the database"
   task :migrate => :connect do
     DataMapper.auto_migrate!

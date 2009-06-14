@@ -10,12 +10,11 @@ class Server
   
   include DataMapper::Resource
 
-  has n, :snapshots
-
   property :id,   Serial
   property :name, String, :key => true
   property :host, String
   property :port, String
+  has n, :snapshots
 
   validates_present :name, :host, :port
   validates_format  :name, :with => /^[0-9a-z]*$/i
@@ -48,6 +47,7 @@ class Server
     else
       self.snapshots.create :alive => false, :created_at => Time.now
     end
+    @stats = nil
   end
 
   def alive?
