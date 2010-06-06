@@ -15,7 +15,7 @@ class Server
   property :host, String
   property :port, String
   has n, :snapshots
-  has 1, :latest_snapshot, :class_name => "Snapshot", :limit => 1, :order => [:created_at.desc]
+  has 1, :latest_snapshot, :model => "Snapshot", :order => [:created_at.desc]
 
   validates_present :name, :host, :port
   validates_format  :name, :with => /^[0-9a-z]*$/i

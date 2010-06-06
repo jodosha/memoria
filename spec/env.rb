@@ -1,10 +1,16 @@
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "/../lib")))
+ARGV << "-b"
 require "rubygems"
+require "bundler"
+Bundler.setup
+
 require "sinatra"
-require "sinatra/test/rspec"
+# require "sinatra/test/rspec"
 require "mocha"
 
-root = File.join(File.dirname(__FILE__), '..')
+Sinatra::Application.environment = :test
 
+root = File.join(File.dirname(__FILE__), '..')
 require "#{root}/memoria"
 
 Memoria.new false
