@@ -65,7 +65,7 @@ class Server
   end
 
   def method_missing(method_name, *args)
-    if result = stats[method_name.to_sym]
+    if result = stats[method_name.to_s]
       result
     else
       super
